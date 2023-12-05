@@ -1,0 +1,55 @@
+%trans {
+    transition: .3s;
+}
+
+.App {
+    display: flex;
+    justify-content: center
+}
+
+.containerTodo {
+    width: 600px;
+    min-height: 100px;
+    height: auto;
+    background-color: brown;
+    opacity: .8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+button {
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 30px;
+    width: 60px;
+    background-color: brown;
+    color: #fff;
+    @extend %trans;
+    margin: 5px;
+    &:hover {
+        background: #fff;
+        color: brown;
+        @extend %trans;
+    }
+}
+
+input {
+    height: 30px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: none;
+    color: #000;
+}
+
+@media (max-width: 300px) {
+    .todoItem {
+        width: 300px;
+    }
+}

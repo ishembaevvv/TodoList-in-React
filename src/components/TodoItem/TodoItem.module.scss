@@ -1,0 +1,35 @@
+.todoItem {
+    min-width: 300px;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+}
+.btns {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    button {
+        width: 150px;
+    }
+}
+
+// MEDIA 
+@media (max-width: 400px) {
+    .btns {
+        display: flex;
+        flex-direction: column;
+        width: 100px;
+        button {
+            width: 80px;
+        }
+    }
+}
+@media (max-width: 300px) {
+    .todoItem {
+        flex-direction: column;
+    }
+}
+
