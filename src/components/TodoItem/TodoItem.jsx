@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import scss from "./TodoItem.module.scss";
+import { Context } from "../../Context";
 
-export default function TodoItem({ todo, completeTodo, deleteTodo, id }) {
+export default function TodoItem({ todo, id }) {
+  const {deleteTodo, completeTodo} = useContext(Context);
+
   return (
     <div className={scss.todoItem} style={todo.complete ? ready : notReady}>
       {todo.text}
