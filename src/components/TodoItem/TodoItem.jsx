@@ -6,11 +6,13 @@ export default function TodoItem({ todo, id }) {
   const {deleteTodo, completeTodo} = useContext(Context);
 
   return (
-    <div className={scss.todoItem} style={todo.complete ? ready : notReady}>
+    <div className={scss.todoItem} style={todo.completed ? ready : notReady}>
+      <span className={scss.id}>{todo.id}</span>
       {todo.text}
+      {todo.title}
       <div className={scss.btns}>
         <button onClick={() => completeTodo(id)}>
-          {todo.complete ? "Back" : "Complete"}
+          {todo.completed ? "Back" : "Complete"}
         </button>
         <button onClick={() => deleteTodo(id)}>Delete</button>
       </div>

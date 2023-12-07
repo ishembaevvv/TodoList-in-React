@@ -7,9 +7,11 @@ import { Context } from "./Context";
 function App() {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
+  const [type, setType] = useState("todos");
+  const [count, setCount] = useState(10);
 
   const createTodo = () => {
-    let arr = [...todos, { text: inputValue, complete: false }]
+    let arr = [...todos, { text: inputValue, completed: false}]
     if (inputValue) {
       setTodos(arr);
       setInputValue("");
@@ -21,6 +23,12 @@ function App() {
     let localTodos = JSON.parse(localStorage.getItem("todos"));
     localTodos && setTodos(localTodos);
   }, [])
+
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/${type}?_limit=${count}`)
+      .then(response => response.json())
+      .then(json => setTodos(json))
+  }, [type, count])
 
   const updateLocal = (arr) => {
     localStorage.setItem("todos", JSON.stringify(arr));
@@ -34,7 +42,7 @@ function App() {
   }
   const completeTodo = (id) => {
     let arr = [...todos];
-    arr[id].complete = !arr[id].complete;
+    arr[id].completed = !arr[id].completed;
     setTodos(arr);
     updateLocal(arr);
   }
@@ -51,6 +59,7 @@ function App() {
                 setInputValue(e.target.value);
               }} />
             <button onClick={createTodo}>ADD</button>
+            <button onClick={() => setCount(count + 10, alert('Буттту!'))} className="moreTodoBtn">MORE Todos {todos.length}</button>
           </div>
           <div>
             {

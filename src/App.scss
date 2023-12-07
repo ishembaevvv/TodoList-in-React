@@ -49,6 +49,10 @@ input {
   color: #000;
 }
 
+.moreTodoBtn {
+  width: 150px;
+}
+
 @media (max-width: 300px) {
   .todoItem {
     width: 300px;
