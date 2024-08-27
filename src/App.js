@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import TodoItem from "./components/TodoItem/TodoItem";
 import './App.scss';
 import { Context } from "./Context";
+import Counter from "./components/TodoItem/Counter";
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
   return (
     <Context.Provider value={{ deleteTodo, completeTodo }}>
       <div className="App">
+      <Counter />
         <div className="containerTodo">
           <div>
             <input type="text"
