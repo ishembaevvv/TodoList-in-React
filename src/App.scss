@@ -12,7 +12,7 @@
   width: 600px;
   min-height: 100px;
   height: auto;
-  background-color: brown;
+  background-color: yellowgreen;
   opacity: 0.8;
   display: flex;
   flex-direction: column;
@@ -30,13 +30,13 @@ button {
   border-radius: 5px;
   height: 30px;
   width: 60px;
-  background-color: brown;
-  color: #fff;
+  background-color: yellow;
+  color: yellowgreen;
   @extend %trans;
   margin: 5px;
   &:hover {
     background: #fff;
-    color: brown;
+    color: yellow;
     @extend %trans;
   }
 }
